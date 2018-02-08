@@ -1,0 +1,39 @@
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csprojResolveAssemblyReference.cache
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csproj.GenerateResource.Cache
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.MenuForm.resources
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ContourForm.resources
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe.config
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.pdb
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Properties.Resources.resources
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.exe
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.pdb
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.BoundingBoxForm.resources
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ClassificationForm.resources
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe.config
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.pdb
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csprojResolveAssemblyReference.cache
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.BoundingBoxForm.resources
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ClassificationForm.resources
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ContourForm.resources
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.MenuForm.resources
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Properties.Resources.resources
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csproj.GenerateResource.Cache
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.exe
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.pdb
+C:\Users\Paul\Downloads\New folder\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Marker.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csprojResolveAssemblyReference.cache
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.BoundingBoxForm.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ClassificationForm.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ContourForm.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Marker.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.MenuForm.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Properties.Resources.resources
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csproj.GenerateResource.Cache
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csproj.CoreCompileInputs.cache
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.exe
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.pdb
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe.config
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe
+C:\Users\Paul\Documents\Visual Studio 2017\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.pdb

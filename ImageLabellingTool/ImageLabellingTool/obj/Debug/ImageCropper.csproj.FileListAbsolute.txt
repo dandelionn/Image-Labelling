@@ -1,0 +1,12 @@
+c:\users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\bin\Debug\ImageCropper.exe.config
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\bin\Debug\ImageCropper.exe
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\bin\Debug\ImageCropper.pdb
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\obj\Debug\ImageCropper.csprojResolveAssemblyReference.cache
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\obj\Debug\ImageCropper.Form1.resources
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\obj\Debug\ImageCropper.Properties.Resources.resources
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\obj\Debug\ImageCropper.csproj.GenerateResource.Cache
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\obj\Debug\ImageCropper.exe
+C:\Users\paul.michea\documents\visual studio 2015\Projects\ImageCropper\ImageCropper\obj\Debug\ImageCropper.pdb
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageCropper.exe.config
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.exe
+C:\Users\paul.michea\Documents\Visual Studio 2015\Projects\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.pdb
