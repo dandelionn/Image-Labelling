@@ -1,0 +1,267 @@
+      
+	                  if (_selectedRect != null && _selectedRect.Width > 0 && _selectedRect.Height > 0)
+                {
+                    switch (_currentCropType)
+                    {
+                        case "triangle":
+                            e.Graphics.FillPolygon(_selectionBrush, _polygonPoints);
+                            break;
+
+                        case "ellipse":
+                            e.Graphics.FillEllipse(_selectionBrush, _selectedRect);
+                            break;
+
+                        case "square":
+                            e.Graphics.FillRectangle(_selectionBrush, _selectedRect);
+                            break;
+
+                        case "circle":
+                            e.Graphics.FillEllipse(_selectionBrush, _selectedRect);
+                            break;
+
+                        case "rectangle":
+                            e.Graphics.FillRectangle(_selectionBrush, _selectedRect);
+                            break;
+                    }
+                    
+                }
+
+               
+	  
+	  
+        public Rectangle ComputeRectInfo(Point tempEndPoint)
+        {
+            Rectangle rectangle = new Rectangle();
+
+            switch (_currentCropType)
+            {
+                case "triangle":
+                    rectangle.Location = new Point(Math.Min(_rectStartPoint.X, tempEndPoint.X), Math.Min(_rectStartPoint.Y, tempEndPoint.Y));
+                    rectangle.Size = new Size(Math.Abs(_rectStartPoint.X - tempEndPoint.X), Math.Abs(_rectStartPoint.Y - tempEndPoint.Y));
+
+                    _polygonPoints = new Point[3];
+                    _polygonPoints[0] = new Point(_selectedRect.Location.X + _selectedRect.Width / 2, _selectedRect.Location.Y);
+                    _polygonPoints[1] = new Point(_selectedRect.Location.X + _selectedRect.Width, _selectedRect.Location.Y + _selectedRect.Height);
+                    _polygonPoints[2] = new Point(_selectedRect.Location.X, _selectedRect.Location.Y + _selectedRect.Height);
+                    break;
+
+                case "ellipse":
+                    rectangle.Location = new Point(Math.Min(_rectStartPoint.X, tempEndPoint.X), Math.Min(_rectStartPoint.Y, tempEndPoint.Y));
+                    rectangle.Size = new Size(Math.Abs(_rectStartPoint.X - tempEndPoint.X), Math.Abs(_rectStartPoint.Y - tempEndPoint.Y));
+                    break;
+
+                case "square":
+                    rectangle.Location = new Point(Math.Min(_rectStartPoint.X, tempEndPoint.X), Math.Min(_rectStartPoint.Y, tempEndPoint.Y));
+                    rectangle.Size = new Size(Math.Abs(_rectStartPoint.Y - tempEndPoint.Y), Math.Abs(_rectStartPoint.Y - tempEndPoint.Y));
+                    break;
+
+                case "circle":
+                    rectangle.Location = new Point(Math.Min(_rectStartPoint.X, tempEndPoint.X), Math.Min(_rectStartPoint.Y, tempEndPoint.Y));
+                    rectangle.Size = new Size(Math.Abs(_rectStartPoint.Y - tempEndPoint.Y), Math.Abs(_rectStartPoint.Y - tempEndPoint.Y));
+                    break;
+
+                case "rectangle":
+                    rectangle.Location = new Point(Math.Min(_rectStartPoint.X, tempEndPoint.X), Math.Min(_rectStartPoint.Y, tempEndPoint.Y));
+                    rectangle.Size = new Size(Math.Abs(_rectStartPoint.X - tempEndPoint.X), Math.Abs(_rectStartPoint.Y - tempEndPoint.Y));
+                    break;
+            }
+        
+            return rectangle;
+        }
+
+
+
+
+
+
+	  ---------------------------------------
+        public void SaveImage(Bitmap bmp, string name)
+        {
+            if (Directory.Exists(_saveDir))
+            {
+                string filePath = Path.Combine(_saveDir, name);
+                switch (name)
+                {
+                    case "ellipse":
+                        {
+                            while(File.Exists(filePath + indexEllipse + ".png"))
+                            {
+                                indexEllipse++;
+                            }
+
+                            filePath += indexEllipse + ".png";
+                        }
+                        break;
+
+                    case "rectangle":
+                        {
+                            while (File.Exists(filePath + indexRectangle + ".png"))
+                            {
+                                indexRectangle++;
+                            }
+
+                            filePath += indexRectangle + ".png";
+                        }
+                        break;
+
+                    case "triangle":
+                        {
+                            while (File.Exists(filePath + indexTriangle + ".png"))
+                            {
+                                indexTriangle++;
+                            }
+
+                            filePath += indexTriangle + ".png";
+                        }
+                        break;
+
+                    case "circle":
+                        {
+                            while (File.Exists(filePath + indexCircle + ".png"))
+                            {
+                                indexCircle++;
+                            }
+
+                            filePath += indexCircle + ".png";
+                        }
+                        break;
+
+                    case "square":
+                        {
+                            while (File.Exists(filePath + indexSquare + ".png"))
+                            {
+                                indexSquare++;
+                            }
+
+                            filePath += indexSquare + ".png";
+                        }
+                        break;
+                }
+
+                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+            }
+        }
+	  
+	  
+	  
+	  
+	  ---------------------------------------
+	  
+	          private void buttonSaveImage_Click(object sender, EventArgs e)
+        {
+            if (_pictureBox.Image != null)
+            {
+                if (_selectedRect != null && _selectedRect.Width > 0 && _selectedRect.Height > 0)
+                {
+                    Bitmap image = null;
+                    switch (_currentCropType)
+                    {
+                        case "triangle":
+                            image = crop_polygon(_pictureBox.Image, _selectedRect, _polygonPoints);
+                        break;
+
+                        case "ellipse":
+                            image = crop_ellipse(_pictureBox.Image, _selectedRect);
+                            break;
+
+                        case "square":
+                            image = crop_rectangle(_pictureBox.Image, _selectedRect);
+                            break;
+
+                        case "circle":
+                            image = crop_ellipse(_pictureBox.Image, _selectedRect);
+                            break;
+
+                        case "rectangle":
+                            image = crop_rectangle(_pictureBox.Image, _selectedRect);
+                            break;
+                    }
+
+                    if (image != null)
+                    {
+                        SaveImage(image, _currentCropType);
+                    }
+                }
+            }
+        }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  -------------------------------------------
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  public Bitmap crop_polygon(Image image, Rectangle cropRectangle, Point[] polygonPoints)
+        {
+            Point[] points = new Point[polygonPoints.Length];
+            for(int i=0; i < polygonPoints.Length; i++)
+            {
+                points[i] = new Point(polygonPoints[i].X - cropRectangle.X, polygonPoints[i].Y - cropRectangle.Y);
+            }
+
+            Bitmap sourceImage = new Bitmap(image);
+
+            Bitmap croppedImage = sourceImage.Clone(cropRectangle, sourceImage.PixelFormat);
+
+            TextureBrush textureBrush = new TextureBrush(croppedImage);
+
+            Bitmap finalImage = new Bitmap(cropRectangle.Width, cropRectangle.Height);
+
+            Graphics g = Graphics.FromImage(finalImage);
+            g.FillPolygon(textureBrush, points);
+
+            return finalImage;
+        }
+
+        public Bitmap crop_rectangle(Image image, Rectangle cropRectangle)
+        {
+            Bitmap sourceImage = new Bitmap(image);
+
+            Bitmap croppedImage = sourceImage.Clone(cropRectangle, sourceImage.PixelFormat);
+
+            return croppedImage;
+        }
+
+        public Bitmap crop_ellipse(Image image, Rectangle cropRectangle)
+        {
+            Bitmap sourceImage = new Bitmap(image);
+
+            Bitmap croppedImage = sourceImage.Clone(cropRectangle, sourceImage.PixelFormat);
+
+            TextureBrush textureBrush = new TextureBrush(croppedImage);
+
+            Bitmap finalImage = new Bitmap(cropRectangle.Width, cropRectangle.Height);
+
+            Graphics g = Graphics.FromImage(finalImage);
+            g.FillEllipse(textureBrush, 0, 0, cropRectangle.Width, cropRectangle.Height);
+
+            return finalImage;
+        }
+
+        public Bitmap crop_ellipse(string sourceFile, Rectangle cropRectangle)
+        {
+            Bitmap sourceImage = new Bitmap(Image.FromFile(sourceFile));
+
+            Bitmap croppedImage = sourceImage.Clone(cropRectangle, sourceImage.PixelFormat);
+
+            TextureBrush textureBrush = new TextureBrush(croppedImage);
+
+            Bitmap finalImage = new Bitmap(cropRectangle.Width, cropRectangle.Height);
+
+            Graphics g = Graphics.FromImage(finalImage);
+            g.FillEllipse(textureBrush, 0, 0, cropRectangle.Width, cropRectangle.Height);
+
+            return finalImage;
+        }

@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ImageLabellingTool
 {
     public abstract class Contour
     {
+        public Type ContourType;
         public List<Marker> Markers {get; set;}
         public Pen Pen {get; set;}
         protected bool ContourReady {get; set;}

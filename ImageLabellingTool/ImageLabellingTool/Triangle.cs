@@ -1,12 +1,15 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ImageLabellingTool
 {
-    public class Polygon: Contour
+    public class Triangle: Contour
     {
-        public Polygon()
+        public Triangle()
         {
             ContourType = this.GetType();
         }

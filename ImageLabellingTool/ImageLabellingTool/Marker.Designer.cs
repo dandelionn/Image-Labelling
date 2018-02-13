@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.Name = "Marker";
-            this.Size = new System.Drawing.Size(10, 10);
+            this.Size = new System.Drawing.Size(5, 5);
             this.LocationChanged += new System.EventHandler(this.Marker_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.Marker_SizeChanged);
             this.ResumeLayout(false);

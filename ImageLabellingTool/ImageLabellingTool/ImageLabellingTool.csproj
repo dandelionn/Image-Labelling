@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +54,7 @@
       <DependentUpon>BoundingBoxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Contour.cs" />
+    <Compile Include="ContourCreator.cs" />
     <Compile Include="ContourForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +67,9 @@
     <Compile Include="ClassificationForm.Designer.cs">
       <DependentUpon>ClassificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContourMap.cs" />
+    <Compile Include="ContourMapGenerator.cs" />
+    <Compile Include="PolygonContourCreator.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="Marker.cs">
       <SubType>UserControl</SubType>
@@ -81,6 +86,10 @@
     <Compile Include="Polygon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tetragon.cs" />
+    <Compile Include="TetragonContourCreator.cs" />
+    <Compile Include="Triangle.cs" />
+    <Compile Include="TriangleContourCreator.cs" />
     <EmbeddedResource Include="BoundingBoxForm.resx">
       <DependentUpon>BoundingBoxForm.cs</DependentUpon>
     </EmbeddedResource>
