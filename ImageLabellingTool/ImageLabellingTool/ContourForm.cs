@@ -246,6 +246,7 @@ namespace ImageCropper
             _pictureBox.Image = image;
         }
 
+        PictureBox _pictureBoxContour = new PictureBox();
         private void buttonGenerateContours_Click(object sender, EventArgs e)
         {
             if (_contourMap.Contours.Count > 0)
@@ -253,12 +254,13 @@ namespace ImageCropper
                 Bitmap image = new Bitmap(_imagePath);
                 Bitmap contourImage = _contourMapGenerator.GenerateContourImage(image, _contourMap.Contours);
 
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Parent = flowLayoutPanelContour;
+            
+               
+                _pictureBoxContour.Parent = flowLayoutPanelContour;
 
 
-                pictureBox.Size = image.Size;
-                pictureBox.Image = contourImage;
+                _pictureBoxContour.Size = image.Size;
+                _pictureBoxContour.Image = contourImage;
             }
         }
     }
