@@ -8,9 +8,18 @@ namespace ImageLabellingTool
     {
         Polygon _polygon = new Polygon();
 
-        public PolygonContourCreator()
+        public PolygonContourCreator(PictureBox pictureBox)
         {
             ContourType = typeof(Polygon);
+
+            PictureBox = pictureBox;
+            AddEvents();
+        }
+
+        protected override void AddEvents()
+        {
+            PictureBox.MouseClick += PictureBox_MouseClick;
+            PictureBox.Paint += PictureBox_Paint;
         }
 
         public void CreateNewPolygon()
@@ -48,7 +57,13 @@ namespace ImageLabellingTool
             (contour as Polygon).DrawLines(e.Graphics);
         }
 
-        public override void RemoveUnusedMarkers()
+        protected override void RemoveEvents()
+        {
+            PictureBox.MouseClick += PictureBox_MouseClick;
+            PictureBox.Paint += PictureBox_Paint;
+        }
+
+        protected override void RemoveUnusedMarkers()
         {
             foreach(Marker marker in _polygon.Markers)
             {

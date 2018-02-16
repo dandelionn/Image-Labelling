@@ -39,7 +39,7 @@
             this.buttonLoadImage = new System.Windows.Forms.Button();
             this.buttonTriangle = new System.Windows.Forms.Button();
             this.buttonTetragon = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonEllipse = new System.Windows.Forms.Button();
             this.buttonNothing = new System.Windows.Forms.Button();
             this.flowLayoutPanelContour = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonGenerateContours = new System.Windows.Forms.Button();
@@ -198,19 +198,20 @@
             this.buttonTetragon.UseVisualStyleBackColor = false;
             this.buttonTetragon.Click += new System.EventHandler(this.buttonTetragon_Click);
             // 
-            // button2
+            // buttonEllipse
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.Teal;
-            this.button2.Location = new System.Drawing.Point(1039, 169);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 40);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Ellipse";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonEllipse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEllipse.BackColor = System.Drawing.Color.White;
+            this.buttonEllipse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEllipse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonEllipse.ForeColor = System.Drawing.Color.Teal;
+            this.buttonEllipse.Location = new System.Drawing.Point(1039, 169);
+            this.buttonEllipse.Name = "buttonEllipse";
+            this.buttonEllipse.Size = new System.Drawing.Size(84, 40);
+            this.buttonEllipse.TabIndex = 21;
+            this.buttonEllipse.Text = "Ellipse";
+            this.buttonEllipse.UseVisualStyleBackColor = false;
+            this.buttonEllipse.Click += new System.EventHandler(this.buttonEllipse_Click);
             // 
             // buttonNothing
             // 
@@ -259,7 +260,7 @@
             this.Controls.Add(this.buttonGenerateContours);
             this.Controls.Add(this.flowLayoutPanelContour);
             this.Controls.Add(this.buttonNothing);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonEllipse);
             this.Controls.Add(this.buttonTetragon);
             this.Controls.Add(this.buttonTriangle);
             this.Controls.Add(this.buttonLoadImage);
@@ -293,7 +294,7 @@
         private System.Windows.Forms.Button buttonLoadImage;
         private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.Button buttonTetragon;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonEllipse;
         private System.Windows.Forms.Button buttonNothing;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelContour;
         private System.Windows.Forms.Button buttonGenerateContours;

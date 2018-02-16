@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ImageLabellingTool
@@ -7,10 +8,19 @@ namespace ImageLabellingTool
     {
         Tetragon _tetragon = new Tetragon();
 
-        public TetragonContourCreator()
+        public TetragonContourCreator(PictureBox pictureBox)
         {
             _creatingContour = false;
             ContourType = typeof(Tetragon);
+
+            PictureBox = pictureBox;
+            AddEvents();
+        }
+
+        protected override void AddEvents()
+        {
+            PictureBox.MouseClick += PictureBox_MouseClick;
+            PictureBox.Paint += PictureBox_Paint;
         }
 
         public void CreateNewTetragon()
@@ -51,7 +61,13 @@ namespace ImageLabellingTool
             (contour as Tetragon).DrawLines(e.Graphics);
         }
 
-        public override void RemoveUnusedMarkers()
+        protected override void RemoveEvents()
+        {
+            PictureBox.MouseClick -= PictureBox_MouseClick;
+            PictureBox.Paint -= PictureBox_Paint;
+        }
+
+        protected override void RemoveUnusedMarkers()
         {
             _creatingContour = false;
             foreach (Marker marker in _tetragon.Markers)

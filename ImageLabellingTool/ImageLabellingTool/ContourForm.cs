@@ -152,7 +152,7 @@ namespace ImageCropper
 
             if (_contourCreator != null)
             {
-                _contourCreator.RemoveUnusedMarkers();
+                _contourCreator.RemoveResources();
             }
 
             _contourCreator = null;
@@ -163,16 +163,15 @@ namespace ImageCropper
             DeEmphasizeButton();
             EmphasizeButton(sender as Button);
 
-            RemoveContourEvents();
-
             if (_contourCreator != null)
             {
-                _contourCreator.RemoveUnusedMarkers();
+                _contourCreator.RemoveResources();
             }
 
-            _contourCreator = new PolygonContourCreator();
-
-            SetContourEvents();
+            if (_pictureBox != null)
+            {
+                _contourCreator = new PolygonContourCreator(_pictureBox);
+            }
         }
 
         private void buttonTriangle_Click(object sender, EventArgs e)
@@ -182,13 +181,13 @@ namespace ImageCropper
 
             if (_contourCreator != null)
             {
-                _contourCreator.RemoveUnusedMarkers();
+                _contourCreator.RemoveResources();
             }
 
-            RemoveContourEvents();
-
-            _contourCreator = new TriangleContourCreator();
-            SetContourEvents();
+            if (_pictureBox != null)
+            {
+                _contourCreator = new TriangleContourCreator(_pictureBox);
+            }
         }
 
         private void buttonTetragon_Click(object sender, EventArgs e)
@@ -198,34 +197,28 @@ namespace ImageCropper
 
             if (_contourCreator != null)
             {
-                _contourCreator.RemoveUnusedMarkers();
+                _contourCreator.RemoveResources();
             }
 
-            RemoveContourEvents();
-
-            _contourCreator = new TetragonContourCreator();
-            SetContourEvents();
-        }
-
-        public void RemoveContourEvents()
-        {
-            if (_pictureBox != null && _contourCreator != null)
+            if (_pictureBox != null)
             {
-                _pictureBox.MouseClick -= _contourCreator.PictureBox_MouseClick;
-                _pictureBox.Paint -= _contourCreator.PictureBox_Paint;
-
-                _contourCreator.PictureBox = null;
+                _contourCreator = new TetragonContourCreator(_pictureBox); ;
             }
         }
 
-        public void SetContourEvents()
+        private void buttonEllipse_Click(object sender, EventArgs e)
         {
-            if (_pictureBox != null && _contourCreator != null)
-            {
-                _pictureBox.MouseClick += _contourCreator.PictureBox_MouseClick;
-                _pictureBox.Paint += _contourCreator.PictureBox_Paint;
+            DeEmphasizeButton();
+            EmphasizeButton(sender as Button);
 
-                _contourCreator.PictureBox = _pictureBox;
+            if (_contourCreator != null)
+            {
+                _contourCreator.RemoveResources();
+            }
+
+            if (_pictureBox != null)
+            {
+                _contourCreator = new EllipseContourCreator(_pictureBox);
             }
         }
 

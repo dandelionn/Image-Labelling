@@ -51,3 +51,16 @@ D:\programare\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\
 D:\programare\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csproj.CoreCompileInputs.cache
 D:\programare\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.exe
 D:\programare\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.pdb
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe.config
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.exe
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.pdb
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.exe
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\bin\Debug\ImageLabellingTool.pdb
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csprojResolveAssemblyReference.cache
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.BoundingBoxForm.resources
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ClassificationForm.resources
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.ContourForm.resources
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Marker.resources
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageCropper.MenuForm.resources
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.Properties.Resources.resources
+D:\GitHub\Image Labelling Tool\ImageLabellingTool\ImageLabellingTool\obj\Debug\ImageLabellingTool.csproj.GenerateResource.Cache

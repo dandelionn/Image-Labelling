@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,10 +9,20 @@ namespace ImageLabellingTool
     {
         Triangle _triangle = new Triangle();
         
-        public TriangleContourCreator()
+        public TriangleContourCreator(PictureBox pictureBox)
         {
             _creatingContour = false;
             ContourType = typeof(Triangle);
+
+            PictureBox = pictureBox;
+
+            AddEvents();
+        }
+
+        protected override void AddEvents()
+        {
+            PictureBox.MouseClick += PictureBox_MouseClick;
+            PictureBox.Paint += PictureBox_Paint;
         }
 
         public void CreateNewTriangle()
@@ -53,7 +64,13 @@ namespace ImageLabellingTool
             (contour as Triangle).DrawLines(e.Graphics);
         }
 
-        public override void RemoveUnusedMarkers()
+        protected override void RemoveEvents()
+        {
+            PictureBox.MouseClick += PictureBox_MouseClick;
+            PictureBox.Paint += PictureBox_Paint;
+        }
+
+        protected override void RemoveUnusedMarkers()
         {
             _creatingContour = false;
             foreach (Marker marker in _triangle.Markers)

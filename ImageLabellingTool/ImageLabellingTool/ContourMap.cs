@@ -54,6 +54,10 @@ namespace ImageLabellingTool
                     TetragonContourCreator.DrawContour(contour, e);
                     continue;
                 }
+                if (contour is Ellipse)
+                {
+                    EllipseContourCreator.DrawContour(contour, e);
+                }
             }
         }
     }

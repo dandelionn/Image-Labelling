@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="ContourMap.cs" />
     <Compile Include="ContourMapGenerator.cs" />
+    <Compile Include="EllipseContourCreator.cs" />
     <Compile Include="PolygonContourCreator.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="Marker.cs">
