@@ -1,29 +1,19 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ImageLabellingTool
 {
-    public abstract class ContourCreator
+    public abstract class ContourCreator: ContourOperator
     {
-        public PictureBox PictureBox { get; set; }
-        protected ContourMap _contourMap;
-
         protected Marker _marker;
         protected Type ContourType;
 
         protected bool _creatingContour;
 
-        private Point _rectStartPoint;
-        protected Rectangle _selectedRect;
 
         protected abstract void AddMarker(Point point);
-
-        public ContourCreator()
-        {
-            _contourMap = ContourMap.GetInstance();
-        }
-
         protected abstract void RemoveUnusedMarkers();
         protected abstract void AddEvents();
         protected abstract void RemoveEvents();
@@ -51,7 +41,8 @@ namespace ImageLabellingTool
             {
                 return;
             }
-            _selectedRect = ComputeRectInfo(e.Location);
+
+            _selectedRect = Geometry.ComputeRectInfo(_rectStartPoint, e.Location);
             PictureBox.Invalidate();
         }
 
@@ -59,24 +50,13 @@ namespace ImageLabellingTool
         {
             if (e.Button == MouseButtons.Left)
             {
-               // if (_selectedRect.Contains(e.Location))
-                //{
-                    AddMarker(Point.Empty);
-                //}
+                AddMarker(Point.Empty);
+
+                _selectedRect = Rectangle.Empty;
             }
         }
 
-        public Rectangle ComputeRectInfo(Point tempEndPoint)
-        {
-            Rectangle rectangle = new Rectangle();
-
-            rectangle.Location = new Point(Math.Min(_rectStartPoint.X, tempEndPoint.X), Math.Min(_rectStartPoint.Y, tempEndPoint.Y));
-            rectangle.Size = new Size(Math.Abs(_rectStartPoint.X - tempEndPoint.X), Math.Abs(_rectStartPoint.Y - tempEndPoint.Y));
-    
-            return rectangle;
-        }
-
-        public void PictureBox_Paint(object sender, PaintEventArgs e)
+        protected void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             if (PictureBox.Image != null)
             {
@@ -87,13 +67,13 @@ namespace ImageLabellingTool
 
         private void DrawSelection(PaintEventArgs e)
         {
-            if (_selectedRect != null && _selectedRect.Width > 0 && _selectedRect.Height > 0)
+            if (_selectedRect != Rectangle.Empty && _selectedRect.Width > 0 && _selectedRect.Height > 0)
             {
-                e.Graphics.FillEllipse(Brushes.Red, _selectedRect);
+                e.Graphics.FillEllipse(new SolidBrush(Color.FromArgb(128, 72, 145, 220)), _selectedRect);
             }
         }
 
-        public void RemoveResources()
+        public override void RemoveResources()
         {
             RemoveEvents();
             RemoveUnusedMarkers();

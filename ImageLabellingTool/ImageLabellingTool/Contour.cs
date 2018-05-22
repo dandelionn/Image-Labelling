@@ -14,7 +14,7 @@ namespace ImageLabellingTool
         public Contour()
         {
             Markers = new List<Marker>();
-            Pen = new Pen(Color.Red);
+            Pen = new Pen(Color.Blue);
             ContourReady = false;
         }
 

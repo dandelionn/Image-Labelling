@@ -66,8 +66,8 @@ namespace ImageLabellingTool
 
         protected override void RemoveEvents()
         {
-            PictureBox.MouseClick += PictureBox_MouseClick;
-            PictureBox.Paint += PictureBox_Paint;
+            PictureBox.MouseClick -= PictureBox_MouseClick;
+            PictureBox.Paint -= PictureBox_Paint;
         }
 
         protected override void RemoveUnusedMarkers()

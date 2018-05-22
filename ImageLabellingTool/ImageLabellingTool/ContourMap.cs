@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ImageLabellingTool
@@ -9,30 +8,69 @@ namespace ImageLabellingTool
     {
         public List<Contour> Contours { get; set;}
 
+        ContourMapGenerator _contourMapGenerator;
+
         private static ContourMap Instance;
 
-        public static ContourMap GetInstance()
+        public static ContourMap GetInstance(PictureBox pictureBox)
         {
             if (Instance == null)
             {
-                Instance = new ContourMap();
+                Instance = new ContourMap(pictureBox);
             }
 
             return Instance;
         }
 
-        private ContourMap()
+        private ContourMap(PictureBox pictureBox)
         {
             Contours = new List<Contour>();
+            _contourMapGenerator = ContourMapGenerator.GetInstance(pictureBox);
         }
 
         public void AddContour(Contour contour)
         {
             foreach (Marker marker in contour.Markers)
-            {
-                marker.CanBeMoved = true;
+            { 
+                marker.Contour = contour;
+                marker.CanBeMoved = true; 
             }
             Contours.Add(contour);
+        }
+
+        public void RemoveContour(Contour contour)
+        {
+            while (contour.Markers.Count != 0)
+            {
+                contour.Markers[0].Dispose();
+                contour.Markers.RemoveAt(0);
+            }
+
+            Contours.Remove(contour);
+
+            if (Contours.Count == 0)
+            {
+                _contourMapGenerator.HideInsidePoint();
+            }
+        }
+
+        public void Clear()
+        {
+            foreach (Contour contour in Contours)
+            {
+                while (contour.Markers.Count != 0)
+                {
+                    contour.Markers[0].Dispose();
+                    contour.Markers.RemoveAt(0);
+                }
+            }
+
+            Contours.Clear();
+
+            if (Contours.Count == 0)
+            {
+                _contourMapGenerator.HideInsidePoint();
+            }
         }
 
         public void DrawContours(PaintEventArgs e)

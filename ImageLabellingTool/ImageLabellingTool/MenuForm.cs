@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ImageCropper
+namespace ImageLabellingTool
 {
     public partial class MenuForm : Form
     {
@@ -10,10 +10,12 @@ namespace ImageCropper
             InitializeComponent();
         }
 
+
         private void buttonClassification_Click(object sender, EventArgs e)
         {
             ClassificationForm classificationForm = new ClassificationForm();
             classificationForm.Owner = this;
+ 
             classificationForm.Show();
 
             this.Hide();

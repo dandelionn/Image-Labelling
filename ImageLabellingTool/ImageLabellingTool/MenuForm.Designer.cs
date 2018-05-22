@@ -1,4 +1,4 @@
-﻿namespace ImageCropper
+﻿namespace ImageLabellingTool
 {
     partial class MenuForm
     {
@@ -40,6 +40,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Corbel", 15.75F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(115, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 26);
@@ -50,7 +51,8 @@
             // 
             this.buttonClassification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClassification.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.buttonClassification.BackColor = System.Drawing.Color.Gray;
+            this.buttonClassification.Enabled = false;
             this.buttonClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClassification.Font = new System.Drawing.Font("Corbel", 15.75F);
             this.buttonClassification.ForeColor = System.Drawing.Color.Black;
@@ -66,7 +68,7 @@
             // 
             this.buttonContour.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonContour.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonContour.BackColor = System.Drawing.Color.DarkGray;
             this.buttonContour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContour.Font = new System.Drawing.Font("Corbel", 15.75F);
             this.buttonContour.ForeColor = System.Drawing.Color.Black;
@@ -82,7 +84,7 @@
             // 
             this.buttonBoundingBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBoundingBox.BackColor = System.Drawing.Color.Plum;
+            this.buttonBoundingBox.BackColor = System.Drawing.Color.Gainsboro;
             this.buttonBoundingBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBoundingBox.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBoundingBox.ForeColor = System.Drawing.Color.Black;
@@ -98,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(379, 293);
             this.Controls.Add(this.buttonBoundingBox);
             this.Controls.Add(this.buttonContour);

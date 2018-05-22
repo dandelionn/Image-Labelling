@@ -47,12 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundingBoxCreator.cs" />
     <Compile Include="BoundingBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BoundingBoxForm.Designer.cs">
       <DependentUpon>BoundingBoxForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassificationForm.Designer.cs">
+      <DependentUpon>ClassificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContourOperator.cs" />
     <Compile Include="Contour.cs" />
     <Compile Include="ContourCreator.cs" />
     <Compile Include="ContourForm.cs">
@@ -61,15 +69,19 @@
     <Compile Include="ContourForm.Designer.cs">
       <DependentUpon>ContourForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassificationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClassificationForm.Designer.cs">
-      <DependentUpon>ClassificationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ContourMap.cs" />
     <Compile Include="ContourMapGenerator.cs" />
+    <Compile Include="ContourRemover.cs" />
     <Compile Include="EllipseContourCreator.cs" />
+    <Compile Include="ExtractedContoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtractedContoursForm.Designer.cs">
+      <DependentUpon>ExtractedContoursForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geometry.cs" />
+    <Compile Include="MaskGenerator.cs" />
+    <Compile Include="Nothing.cs" />
     <Compile Include="PolygonContourCreator.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="Marker.cs">
@@ -99,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContourForm.resx">
       <DependentUpon>ContourForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtractedContoursForm.resx">
+      <DependentUpon>ExtractedContoursForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marker.resx">
       <DependentUpon>Marker.cs</DependentUpon>

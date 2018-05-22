@@ -35,6 +35,11 @@ namespace ImageLabellingTool
             _marker.Location = new Point(e.X - _marker.Width / 2, e.Y - _marker.Height / 2);
             _marker.MouseClick += Marker_MouseClick;
 
+            if(_polygon.Markers.Count  == 0)
+            {
+                _marker.BackColor = Color.DeepSkyBlue;
+            }
+
             if (_polygon.AddMarker(_marker))
             {
                 _marker.Dispose();
@@ -59,8 +64,8 @@ namespace ImageLabellingTool
 
         protected override void RemoveEvents()
         {
-            PictureBox.MouseClick += PictureBox_MouseClick;
-            PictureBox.Paint += PictureBox_Paint;
+            PictureBox.MouseClick -= PictureBox_MouseClick;
+            PictureBox.Paint -= PictureBox_Paint;
         }
 
         protected override void RemoveUnusedMarkers()

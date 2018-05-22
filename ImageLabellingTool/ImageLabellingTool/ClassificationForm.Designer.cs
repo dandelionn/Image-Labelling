@@ -1,4 +1,4 @@
-﻿namespace ImageCropper
+﻿namespace ImageLabellingTool
 {
     partial class ClassificationForm
     {
@@ -34,9 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "ClassificationForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Classification";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClassificationForm_FormClosed);
             this.ResumeLayout(false);

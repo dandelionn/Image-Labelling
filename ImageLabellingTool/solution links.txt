@@ -1,0 +1,17 @@
+Ellipse rotated by an angle
+
+https://math.stackexchange.com/questions/426150/what-is-the-general-equation-of-the-ellipse-that-is-not-in-the-origin-and-rotate
+
+
+Distorted plain OpenGL
+
+https://stackoverflow.com/questions/32401025/how-can-i-draw-an-ellipse-based-on-four-rotated-and-scaled-points
+
+
+Bresenham's line algorithm
+
+https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+
+
+Rotation, Translation, Implementation
+http://cplusplus.happycodings.com/computer-graphics/code29.html

@@ -49,25 +49,70 @@ namespace ImageLabellingTool
             _ellipse.AddMarker(BuildMarker(point));
 
             //Add Up Point
-            point = new Point(_selectedRect.X + _selectedRect.Width/2, _selectedRect.Y);
+            point = new Point(_selectedRect.X + _selectedRect.Width / 2, _selectedRect.Y);
             _ellipse.AddMarker(BuildMarker(point));
 
             //Add Down Point
-            point = new Point(_selectedRect.X + _selectedRect.Width/2, _selectedRect.Y + _selectedRect.Height);
+            point = new Point(_selectedRect.X + _selectedRect.Width / 2, _selectedRect.Y + _selectedRect.Height);
             _ellipse.AddMarker(BuildMarker(point));
 
-            _contourMap.AddContour(_ellipse);
+            //Add Rotation Point Up Left
+            point = new Point(_selectedRect.X, _selectedRect.Y);
+            _ellipse.AddMarker(BuildMarker(point, true));
+
+            //Add Rotation Point Down Left
+            point = new Point(_selectedRect.X, _selectedRect.Y + _selectedRect.Height);
+            _ellipse.AddMarker(BuildMarker(point, true));
+
+            //Add Rotation Point Up Right
+            point = new Point(_selectedRect.X + _selectedRect.Width, _selectedRect.Y);
+            _ellipse.AddMarker(BuildMarker(point, true));
+
+            //Add Rotation Point Down Right
+            point = new Point(_selectedRect.X + _selectedRect.Width, _selectedRect.Y + _selectedRect.Height);
+            _ellipse.AddMarker(BuildMarker(point, true));
+
+            if(IsEllipseGood())
+            {
+                _contourMap.AddContour(_ellipse);
+            }
+            else
+            {
+                while(_ellipse.Markers.Count != 0)
+                {
+                    _ellipse.Markers[0].Dispose();
+                    _ellipse.Markers.RemoveAt(0);
+                }
+            }
 
             CreateNewEllipse();
 
             PictureBox.Invalidate();
         }
 
-        private Marker BuildMarker(Point point)
+        public bool IsEllipseGood()
+        {
+            if (Geometry.EuclidianDistance(_ellipse.Markers[1].Location, _ellipse.Markers[2].Location) < 2 ||
+                Geometry.EuclidianDistance(_ellipse.Markers[3].Location, _ellipse.Markers[4].Location) < 2)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private Marker BuildMarker(Point point, bool hidden = false)
         {
             _marker = new Marker();
             _marker.Parent = PictureBox;
             _marker.Location = new Point(point.X - _marker.Width / 2, point.Y - _marker.Height / 2);
+
+            if (hidden)
+            {
+                _marker.Hide();
+            }
 
             return _marker;
         }
